@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #1a1410;
+  --paper: #f3ebe0;
+  --paper-deep: #e4d5c3;
+  --walnut: #3d2a1f;
+  --copper: #b85c38;
+  --copper-deep: #8f3f24;
+  --cream: #faf6f0;
+  --muted: #6b5a4c;
+  --line: rgba(61, 42, 31, 0.15);
+  --success: #2f5d3a;
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-paper-deep: var(--paper-deep);
+  --color-walnut: var(--walnut);
+  --color-copper: var(--copper);
+  --color-copper-deep: var(--copper-deep);
+  --color-cream: var(--cream);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-success: var(--success);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body), Georgia, serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes soft-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes shear {
+  from {
+    transform: scaleX(0.2);
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s ease-out both;
+}
+
+.animate-fade-up-delay {
+  animation: fade-up 0.8s ease-out 0.15s both;
+}
+
+.animate-shear {
+  transform-origin: left;
+  animation: shear 0.9s ease-out 0.25s both;
+}
+
+.animate-soft-pulse {
+  animation: soft-pulse 3.5s ease-in-out infinite;
+}
